@@ -561,7 +561,7 @@ function phys(dt){
   for(const c of A){const dx=cp.x-c.x,dz=cp.z-c.z,rr=c.r+1,d2=dx*dx+dz*dz;
   if(d2<rr*rr&&car.p.y<c.top+1){const d=Math.sqrt(d2)||.01,nx=dx/d,nz=dz/d,pen=rr-d;
   car.p.x+=nx*pen;car.p.z+=nz*pen;const vn_=car.v.x*nx+car.v.z*nz;
-  if(vn_<0){car.v.x-=nx*vn_*1.35;car.v.z-=nz*vn_*1.35;if(vn_<-3){shake=Math.min(1,-vn_/12);beep(90,.15);takeDmg(Math.abs(vn_)*2);}}}}}
+  if(vn_<0){car.v.x-=nx*vn_*1.35;car.v.z-=nz*vn_*1.35;if(vn_<-3){shake=Math.min(1,-vn_/12);beep(90,.15);takeDmg(Math.abs(vn_)*2);}}}}}}
   const lim=690;if(Math.abs(car.p.x)>lim){car.p.x=Math.sign(car.p.x)*lim;car.v.x*=-.3;}
   if(Math.abs(car.p.z)>lim){car.p.z=Math.sign(car.p.z)*lim;car.v.z*=-.3;}
   if(nos>0&&IN.n)nos=Math.max(0,nos-dt/(6+nosUpg*2));else nos=Math.min(1+nosUpg*.25,nos+dt/20);
